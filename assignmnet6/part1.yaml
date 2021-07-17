@@ -14,15 +14,22 @@
         name: varshini
         groups: automation
         append: yes
-        generate_ssh_key: yes
-        ssh_key_bits: 2048
-        ssh_key_file: .ssh/id_rsa
+        #generate_ssh_key: yes
+        #ssh_key_bits: 2048
+        #ssh_key_file: .ssh/id_rsa
 
     - name: Add a user thammineni and add them to a group developer
       user:
         name: thammineni
         groups: automation
         append: yes
-        generate_ssh_key: yes
-        ssh_key_bits: 2048
-        ssh_key_file: .ssh/id_rsa
+        #generate_ssh_key: yes
+        #ssh_key_bits: 2048
+        #ssh_key_file: .ssh/id_rsa
+  
+  
+    - name: usersverification
+      script: verifyscript.sh
+      register: out
+     
+    - debug: var=out.stdout_lines
