@@ -1,0 +1,11 @@
+---
+- name: usersverification
+  hosts: webservers
+  remote_user: root
+
+  tasks:
+  - name: Execute script on server
+    script: verifyscript.sh
+    register: out
+
+  - debug: var=out.stdout_lines
